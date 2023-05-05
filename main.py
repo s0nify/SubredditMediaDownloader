@@ -34,7 +34,7 @@ class SubredditDownloader:
     @staticmethod
     def set_session():
         # Some image hosts (ahyes.fun) were throwing ssl errors, so we stop verifying certificates.
-        conn = aiohttp.TCPConnector(limit=10, ssl=False)
+        conn = aiohttp.TCPConnector(limit=50, ssl=False)
 
         # If the subreddit is big, it could take a long time to download everything
         # and sooner or later the session expires, so we'll just disable timeouts.
